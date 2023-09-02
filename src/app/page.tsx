@@ -4,50 +4,50 @@ import Matrix from "@/components/Matrix";
 import Image from "next/image";
 import { useState } from "react";
 
-const InputMatrixDimension = () => {
-  return (
-    <div className="w-full max-w-xs">
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="rows"
-          >
-            Rows
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="rows"
-            type="number"
-            placeholder="rows"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="columns"
-          >
-            Columns
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="columns"
-            type="number"
-            placeholder="columns"
-          />
-        </div>
-        <div className="flex items-center justify-between">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
-    </div>
-  );
-};
+// const InputMatrixDimension = () => {
+//   return (
+//     <div className="w-full max-w-xs">
+//       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+//         <div className="mb-4">
+//           <label
+//             className="block text-gray-700 text-sm font-bold mb-2"
+//             htmlFor="rows"
+//           >
+//             Rows
+//           </label>
+//           <input
+//             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+//             id="rows"
+//             type="number"
+//             placeholder="rows"
+//           />
+//         </div>
+//         <div className="mb-4">
+//           <label
+//             className="block text-gray-700 text-sm font-bold mb-2"
+//             htmlFor="columns"
+//           >
+//             Columns
+//           </label>
+//           <input
+//             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+//             id="columns"
+//             type="number"
+//             placeholder="columns"
+//           />
+//         </div>
+//         <div className="flex items-center justify-between">
+//           <button
+//             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+//             type="button"
+//           >
+//             Submit
+//           </button>
+//         </div>
+//       </form>
+//     </div>
+//   );
+// };
 
 const GeneratedTable = () => {
   const [data, setData] = useState([]);
@@ -62,7 +62,7 @@ const GeneratedTable = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full" data-testid="section-matrix">
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
           <Matrix request={{ rows: 4, cols: 4 }} onChange={setData} />;
@@ -81,7 +81,7 @@ const GeneratedTable = () => {
 
 const SearchTarget = () => {
   return (
-    <div className="w-full">
+    <div className="w-full" data-testid="search_target-section">
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
           <label

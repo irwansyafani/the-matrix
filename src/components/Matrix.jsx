@@ -28,6 +28,14 @@ function Matrix({request, onChange}) {
 
   const [data, setData] = useState(matrix)
 
+  const onInputChange = (e) => {
+    const cloned = [...data]
+    if(e.target.value * 1) {
+      cloned[rowIndex][cellIndex] = +e.target.value
+      setData(cloned)
+    }
+  }
+
   useEffect(() => {
     onChange(data)
   }, [data])
@@ -35,19 +43,13 @@ function Matrix({request, onChange}) {
   return (
     <div>
       <h1 className="text-black font-bold" data-testid="title-matrix">Matrix of {rows}x{cols}</h1>
-      <table>
+      <table data-testid="matrix-tiles">
         <tbody>
           {data.map((row, rowIndex) => (
-            <tr key={rowIndex}>
+            <tr key={rowIndex} >
               {row.map((cell, cellIndex) => (
                 <td key={cellIndex}>
-                  <input placeholder="number" width={30} style={{ color: "black" }} value={row[cellIndex]} onChange={(e) => {
-                    const cloned = [...data]
-                    if(e.target.value * 1) {
-                      cloned[rowIndex][cellIndex] = +e.target.value
-                      setData(cloned)
-                    }
-                  }} />
+                  <input placeholder="number" width={30} style={{ color: "black" }} value={row[cellIndex]} data-testid="matrix-tile" onChange={onInputChange} />
                 </td>
               ))}
             </tr>
