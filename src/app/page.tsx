@@ -1,7 +1,7 @@
 "use client"
+import { useState } from "react"
 import SearchTarget from "@/components/search-target"
 import GeneratedTable from "@/components/generated-table"
-import { useState } from "react"
 
 const HomePage = () => {
   const [data, setData] = useState([])

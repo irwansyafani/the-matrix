@@ -39,7 +39,7 @@ export const authOptions: AuthOptions = {
           id: "",
           email: "",
           emailVerified: new Date(),
-          token: dataUser.data.token,
+          // token: dataUser.data.token,
         }
       },
     }),
