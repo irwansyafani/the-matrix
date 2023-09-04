@@ -3,7 +3,6 @@ import { EthereumClient, w3mConnectors, w3mProvider } from "@web3modal/ethereum"
 import { Web3Modal } from "@web3modal/react"
 import { configureChains, createConfig, WagmiConfig } from "wagmi"
 import { mainnet, polygon } from "wagmi/chains"
-
 import "./globals.css"
 
 const chains = [mainnet, polygon]
@@ -24,10 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <WagmiConfig config={wagmiConfig}>
-        <body>{children}</body>
-      </WagmiConfig>
-      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+      <body>
+        <WagmiConfig config={wagmiConfig}>{children}</WagmiConfig>
+        <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+      </body>
     </html>
   )
 }
